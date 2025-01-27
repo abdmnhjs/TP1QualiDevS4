@@ -1,33 +1,58 @@
 package Decorateur;
 
+/**
+ * Abstract class that represents a sailboat
+ */
 public abstract class Voilier {
 
-    private String nom;
-    private SuivreRoute suivreRoute; // suivreRoute appartient à une classe qui implemente l'interface Decorateur.SuivreRoute
+    private String name;
+    private SuivreRoute suivreRoute; // suivreRoute belongs to a class that implements the Decorateur.SuivreRoute interface
 
-    public Voilier(String nom) {
-        this.nom = nom;
+    /**
+     * Constructor that allows creating a sailboat with a name
+     * @param name The name of the sailboat
+     */
+    public Voilier(String name) {
+        this.name = name;
     }
 
-    public Voilier(String nom, SuivreRoute suivreRoute) {
-        this.nom = nom;
+    /**
+     * Constructor that allows creating a sailboat with a name and a follow route behavior
+     * @param name The name of the sailboat
+     * @param suivreRoute The follow route behavior of the sailboat
+     */
+    public Voilier(String name, SuivreRoute suivreRoute) {
+        this.name = name;
         this.suivreRoute = suivreRoute;
     }
 
+    /**
+     * Default constructor
+     */
     public Voilier() {
 
     }
 
+    /**
+     * Returns a string representation of the sailboat
+     * @return A string describing the sailboat
+     */
     public String toString() {
-        return "Le nom du voilier est: "+ nom;
+        return "The name of the sailboat is: " + name;
     }
 
+    /**
+     * Sets the follow route behavior for the sailboat
+     * @param suivreRoute The follow route behavior
+     */
     public void setSuivreRoute(SuivreRoute suivreRoute) {
         this.suivreRoute = suivreRoute;
     }
 
-    public void appliqueSuivreRoute(){
+    /**
+     * Applies the follow route behavior
+     */
+    public void appliqueSuivreRoute() {
         this.suivreRoute.suivreRoute();
-
     }
 }
