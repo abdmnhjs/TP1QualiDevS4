@@ -1,9 +1,14 @@
 package Decorateur;
 
+/**
+ * Class that represents the trade winds route behavior
+ */
 public class RouteAlizes implements SuivreRoute {
 
-
-    public void suivreRoute(){
+    /**
+     * Method that follows the trade winds route
+     */
+    public void suivreRoute() {
         System.out.println("Route Alizes");
     }
 }
